@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>انضم إلى فريقنا</title>
+<script src="https://cdn.tailwindcss.com/3.4.16">
+document.getElementById('exploreBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('exploreSection').classList.remove('hidden');
+  document.getElementById('exploreSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('exploreForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = this.name.value;
+  const discord = this.discord.value;
+  const idea = this.idea.value;
+  const entry = { id: Date.now(), name, discord, idea, date: new Date().toLocaleDateString('ar-SA'), status: 'pending' };
+  applications.push(entry);
+  this.reset();
+  alert('تم إرسال الفكرة بنجاح! سيتم مراجعتها مع الفريق.');
+  if (!adminDashboard.classList.contains('hidden')) {
+    renderApplicationsList();
+  }
+});
+
+
+document.getElementById('exploreBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('exploreSection').classList.remove('hidden');
+  document.getElementById('exploreSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('suggestionForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const suggestedName = this.suggestedName.value;
+  const yourName = this.yourName.value;
+  const reason = this.reason.value;
+  const entry = {
+    id: Date.now(),
+    type: 'suggestion',
+    suggestedName,
+    yourName,
+    reason,
+    date: new Date().toLocaleDateString('ar-SA'),
+    status: 'pending'
+  };
+  applications.push(entry);
+  this.reset();
+  alert('تم إرسال الاقتراح بنجاح! سيتم عرضه مع التقديمات.');
+  if (!adminDashboard.classList.contains('hidden')) {
+    renderApplicationsList();
+  }
+});
+
+</script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#6c5ce7',secondary:'#00cec9'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}
+document.getElementById('exploreBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('exploreSection').classList.remove('hidden');
+  document.getElementById('exploreSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('exploreForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = this.name.value;
+  const discord = this.discord.value;
+  const idea = this.idea.value;
+  const entry = { id: Date.now(), name, discord, idea, date: new Date().toLocaleDateString('ar-SA'), status: 'pending' };
+  applications.push(entry);
+  this.reset();
+  alert('تم إرسال الفكرة بنجاح! سيتم مراجعتها مع الفريق.');
+  if (!adminDashboard.classList.contains('hidden')) {
+    renderApplicationsList();
+  }
+});
+
+
+document.getElementById('exploreBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('exploreSection').classList.remove('hidden');
+  document.getElementById('exploreSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('suggestionForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const suggestedName = this.suggestedName.value;
+  const yourName = this.yourName.value;
+  const reason = this.reason.value;
+  const entry = {
+    id: Date.now(),
+    type: 'suggestion',
+    suggestedName,
+    yourName,
+    reason,
+    date: new Date().toLocaleDateString('ar-SA'),
+    status: 'pending'
+  };
+  applications.push(entry);
+  this.reset();
+  alert('تم إرسال الاقتراح بنجاح! سيتم عرضه مع التقديمات.');
+  if (!adminDashboard.classList.contains('hidden')) {
+    renderApplicationsList();
+  }
+});
+
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Tajawal', sans-serif;
+background-color: #f8f9fa;
+}
+.hero-bg {
+background-image: url('https://static.readdy.ai/image/5d9fc905c12a9e7939a491a90483198b/445f2ba6a269764aa7c9f9efc1461ae6.jpeg');
+background-size: cover;
+background-position: center;
+}
+.form-container {
+backdrop-filter: blur(10px);
+background-color: rgba(255, 255, 255, 0.9);
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #6c5ce7;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #6c5ce7;
+}
+.custom-checkbox:checked::after {
+content: '✓';
+position: absolute;
+color: white;
+font-size: 14px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.custom-radio {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #6c5ce7;
+border-radius: 50%;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-radio:checked {
+border-color: #6c5ce7;
+}
+.custom-radio:checked::after {
+content: '';
+position: absolute;
+width: 10px;
+height: 10px;
+background-color: #6c5ce7;
+border-radius: 50%;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.custom-file-input::-webkit-file-upload-button {
+visibility: hidden;
+}
+.custom-file-input::before {
+content: 'اختر الملفات';
+display: inline-block;
+background: #6c5ce7;
+color: white;
+border-radius: 8px;
+padding: 8px 16px;
+outline: none;
+white-space: nowrap;
+cursor: pointer;
+font-weight: 500;
+}
+.custom-file-input:hover::before {
+background: #5649c0;
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 34px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 16px;
+width: 16px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #6c5ce7;
+}
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+.team-card {
+transition: all 0.3s ease;
+}
+.team-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.input-field {
+border: 1px solid #e2e8f0;
+transition: all 0.3s ease;
+}
+.input-field:focus {
+border-color: #6c5ce7;
+box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+}
+</style>
+</head>
+<body class="min-h-screen">
+<!-- Header Navigation -->
+<header class="bg-white shadow-md sticky top-0 z-50">
+<nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+<div class="flex items-center">
+<h1 class="text-3xl font-['Pacifico'] text-primary">wonders</h1>
+</div>
+<div class="flex items-center space-x-4 space-x-reverse">
+<button id="loginBtn" class="px-4 py-2 text-primary border border-primary hover:bg-primary hover:text-white transition-colors duration-300 !rounded-button whitespace-nowrap">تسجيل الدخول</button>
+<button id="registerBtn" class="px-4 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap">إنشاء حساب</button>
+</div>
+
+<a href="#exploreSection" id="exploreBtn" class="px-4 py-2 text-primary border border-primary hover:bg-primary hover:text-white transition-colors duration-300 rounded-button whitespace-nowrap">استكشاف</a>
+
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="hero-bg py-20 relative">
+<div class="absolute inset-0 bg-black bg-opacity-50"></div>
+<div class="container mx-auto px-4 relative z-10">
+<div class="text-center text-white">
+<h1 class="text-5xl font-bold mb-6">انضم إلى <span class="text-secondary">الأفضل</span></h1>
+<p class="text-xl mb-8 max-w-2xl mx-auto">نبحث عن أفضل المواهب للانضمام إلى فريقنا. إذا كنت يوتيوبر أو ستريمر موهوب، فنحن نريدك!</p>
+<div class="flex justify-center gap-4">
+<button id="applyNowBtn" class="px-8 py-3 bg-primary text-white text-lg font-bold hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap">قدم طلبك الآن</button>
+<button id="partnershipBtn" class="px-8 py-3 bg-secondary text-white text-lg font-bold hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap">الشراكة معنا</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content - Application Forms -->
+<section id="applicationSection" class="py-16 hidden">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto form-container rounded-lg shadow-xl p-8">
+<h2 class="text-3xl font-bold text-center mb-8">طلب الانضمام للفريق</h2>
+<!-- Application Form -->
+<form id="applicationForm" class="space-y-6">
+<!-- Step 1: Choose Type -->
+<div id="step1" class="space-y-4">
+<h3 class="text-xl font-semibold">هل انت يوتيوبر او ستريمر؟</h3>
+<div class="flex space-x-6 space-x-reverse">
+<label class="flex items-center space-x-2 space-x-reverse cursor-pointer p-3 rounded-lg transition-all duration-300" id="youtuberLabel">
+<input type="radio" name="contentType" value="youtuber" class="custom-radio" id="youtuberRadio">
+<span>يوتيوبر</span>
+<i class="ri-check-line ri-lg text-primary hidden ml-2"></i>
+</label>
+<label class="flex items-center space-x-2 space-x-reverse cursor-pointer p-3 rounded-lg transition-all duration-300" id="streamerLabel">
+<input type="radio" name="contentType" value="streamer" class="custom-radio" id="streamerRadio">
+<span>ستريمر</span>
+<i class="ri-check-line ri-lg text-primary hidden ml-2"></i>
+</label>
+</div>
+<p id="selectionConfirmation" class="text-sm text-primary mt-2 hidden"></p>
+<div class="pt-4">
+<button type="button" id="nextToStep2" class="px-6 py-2 bg-gray-300 text-gray-500 hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap opacity-50 cursor-not-allowed">التالي</button>
+</div>
+</div>
+<!-- Step 2: YouTuber Questions -->
+<div id="youtuberQuestions" class="space-y-4 hidden">
+<div>
+<label class="block text-gray-700 font-medium mb-2">رابط قناتك</label>
+<input type="url" name="youtubeLink" class="w-full px-4 py-2 rounded input-field focus:outline-none" placeholder="https://youtube.com/c/yourchannel">
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">مستوى مونتاجك</label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
+<input type="radio" name="editingLevel" value="bad" class="custom-radio">
+<span class="mr-2">سيء</span>
+</label>
+<label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
+<input type="radio" name="editingLevel" value="medium" class="custom-radio">
+<span class="mr-2">متوسط</span>
+</label>
+<label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
+<input type="radio" name="editingLevel" value="good" class="custom-radio">
+<span class="mr-2">جيد</span>
+</label>
+<label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
+<input type="radio" name="editingLevel" value="excellent" class="custom-radio">
+<span class="mr-2">ممتاز</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">صور المصغرة</label>
+<div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+<input type="file" name="thumbnails" accept="image/*" multiple class="custom-file-input w-full">
+<p class="mt-2 text-sm text-gray-500">يمكنك تحميل عدة صور (الحد الأدنى صورة واحدة)</p>
+<div id="thumbnailPreview" class="grid grid-cols-3 gap-2 mt-4"></div>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">حسابك في الديسكورد</label>
+<input type="text" name="discordYoutuber" class="w-full px-4 py-2 rounded input-field focus:outline-none" placeholder="username#0000">
+<p class="text-sm text-gray-500 mt-1">حتى نتواصل معك اكثر ونتكلم مع بعضنا ونتفهم</p>
+</div>
+<div class="pt-4 flex justify-between">
+<button type="button" class="back-btn px-6 py-2 border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-300 !rounded-button whitespace-nowrap">رجوع</button>
+<button type="submit" class="px-6 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap">إرسال الطلب</button>
+</div>
+</div>
+<!-- Step 2: Streamer Questions -->
+<div id="streamerQuestions" class="space-y-4 hidden">
+<div>
+<label class="block text-gray-700 font-medium mb-2">كل متى تبث بثوث؟</label>
+<input type="text" name="streamSchedule" class="w-full px-4 py-2 rounded input-field focus:outline-none" placeholder="مثال: يومياً، أسبوعياً، 3 مرات في الأسبوع...">
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">هل جهازك قوي؟</label>
+<div class="grid grid-cols-3 gap-3">
+<label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
+<input type="radio" name="pcSpec" value="weak" class="custom-radio">
+<span class="mr-2">ضعيف</span>
+</label>
+<label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
+<input type="radio" name="pcSpec" value="medium" class="custom-radio">
+<span class="mr-2">متوسط</span>
+</label>
+<label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
+<input type="radio" name="pcSpec" value="strong" class="custom-radio">
+<span class="mr-2">قوي</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">حسابك في الديسكورد</label>
+<input type="text" name="discordStreamer" class="w-full px-4 py-2 rounded input-field focus:outline-none" placeholder="username#0000">
+<p class="text-sm text-gray-500 mt-1">حتى نتمكن من التواصل معك</p>
+</div>
+<div class="pt-4 flex justify-between">
+<button type="button" class="back-btn px-6 py-2 border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-300 !rounded-button whitespace-nowrap">رجوع</button>
+<button type="submit" class="px-6 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap">إرسال الطلب</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Success Message -->
+<div id="successMessage" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+<div class="bg-white rounded-lg p-8 max-w-md w-full text-center">
+<div class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4">
+<i class="ri-check-line ri-2x text-green-500"></i>
+</div>
+<h3 class="text-2xl font-bold mb-2">تم إرسال طلبك بنجاح!</h3>
+<p class="text-gray-600 mb-6">حظ موفق وان شاء الله يتم قبولك!</p>
+<button id="closeSuccessBtn" class="px-6 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap">العودة للرئيسية</button>
+</div>
+</div>
+<!-- Login Modal -->
+<div id="loginModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+<div class="bg-white rounded-lg p-8 max-w-md w-full">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold">تسجيل الدخول</h3>
+<button class="close-modal w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+<form id="loginForm" class="space-y-4">
+<div>
+<label class="block text-gray-700 font-medium mb-2">البريد الإلكتروني</label>
+<input type="email" name="email" class="w-full px-4 py-2 rounded input-field focus:outline-none" required>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">كلمة المرور</label>
+<input type="password" name="password" class="w-full px-4 py-2 rounded input-field focus:outline-none" required>
+</div>
+<div class="flex items-center justify-between">
+<label class="flex items-center space-x-2 space-x-reverse">
+<input type="checkbox" class="custom-checkbox">
+<span class="text-sm">تذكرني</span>
+</label>
+<a href="#" class="text-sm text-primary hover:underline">نسيت كلمة المرور؟</a>
+</div>
+<button type="submit" class="w-full py-2 bg-primary text-white hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap">دخول</button>
+<p class="text-center text-sm">ليس لديك حساب؟ <a href="#" id="showRegisterModal" class="text-primary hover:underline">إنشاء حساب جديد</a></p>
+</form>
+</div>
+</div>
+<!-- Register Modal -->
+<div id="registerModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+<div class="bg-white rounded-lg p-8 max-w-md w-full">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold">إنشاء حساب جديد</h3>
+<button class="close-modal w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+<form id="registerForm" class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-gray-700 font-medium mb-2">الاسم الأول</label>
+<input type="text" name="firstName" class="w-full px-4 py-2 rounded input-field focus:outline-none" required>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">الاسم الأخير</label>
+<input type="text" name="lastName" class="w-full px-4 py-2 rounded input-field focus:outline-none" required>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">البريد الإلكتروني</label>
+<input type="email" name="email" class="w-full px-4 py-2 rounded input-field focus:outline-none" required>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">كلمة المرور</label>
+<input type="password" name="password" class="w-full px-4 py-2 rounded input-field focus:outline-none" required>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">تأكيد كلمة المرور</label>
+<input type="password" name="confirmPassword" class="w-full px-4 py-2 rounded input-field focus:outline-none" required>
+</div>
+<div class="flex items-center">
+<input type="checkbox" name="terms" class="custom-checkbox" required>
+<span class="mr-2 text-sm">أوافق على <a href="#" class="text-primary hover:underline">الشروط والأحكام</a></span>
+</div>
+<button type="submit" class="w-full py-2 bg-primary text-white hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap">إنشاء حساب</button>
+<p class="text-center text-sm">لديك حساب بالفعل؟ <a href="#" id="showLoginModal" class="text-primary hover:underline">تسجيل الدخول</a></p>
+</form>
+</div>
+</div>
+<!-- Admin Login Modal -->
+<div id="adminLoginModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+<div class="bg-white rounded-lg p-8 max-w-md w-full">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold">تسجيل دخول المسؤول</h3>
+<button class="close-modal w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+<form id="adminLoginForm" class="space-y-4">
+<div>
+<label class="block text-gray-700 font-medium mb-2">البريد الإلكتروني</label>
+<input type="email" name="adminEmail" value="ramlawerd42@gmail.com" class="w-full px-4 py-2 rounded input-field focus:outline-none" required>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">كلمة المرور</label>
+<input type="password" name="adminPassword" value="admin123" class="w-full px-4 py-2 rounded input-field focus:outline-none" required>
+</div>
+<button type="submit" class="w-full py-2 bg-primary text-white hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap">دخول</button>
+</form>
+</div>
+</div>
+<!-- Admin Dashboard -->
+<section id="adminDashboard" class="py-16 hidden">
+<div class="container mx-auto px-4">
+<div class="bg-white rounded-lg shadow-xl p-8">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-3xl font-bold">لوحة تحكم المسؤول</h2>
+<button id="adminLogout" class="px-4 py-2 bg-red-500 text-white hover:bg-red-600 transition-colors duration-300 !rounded-button whitespace-nowrap">تسجيل الخروج</button>
+</div>
+<div class="mb-8">
+<h3 class="text-xl font-semibold mb-4">إضافة مسؤول جديد</h3>
+<form id="addAdminForm" class="flex flex-wrap gap-4">
+<input type="text" name="newAdminName" placeholder="اسم المسؤول" class="px-4 py-2 rounded input-field focus:outline-none flex-1">
+<input type="email" name="newAdminEmail" placeholder="البريد الإلكتروني" class="px-4 py-2 rounded input-field focus:outline-none flex-1">
+<input type="password" name="newAdminPassword" placeholder="كلمة المرور" class="px-4 py-2 rounded input-field focus:outline-none flex-1">
+<button type="submit" class="px-6 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap">إضافة</button>
+</form>
+</div>
+<div class="mb-8">
+<h3 class="text-xl font-semibold mb-4">المسؤولون الحاليون</h3>
+<div class="overflow-x-auto">
+<table class="min-w-full bg-white">
+<thead>
+<tr>
+<th class="py-3 px-4 border-b text-right">الاسم</th>
+<th class="py-3 px-4 border-b text-right">البريد الإلكتروني</th>
+<th class="py-3 px-4 border-b text-right">الإجراءات</th>
+</tr>
+</thead>
+<tbody id="adminsList">
+<tr>
+<td class="py-3 px-4 border-b">رام (المدير)</td>
+<td class="py-3 px-4 border-b">ramlawerd42@gmail.com</td>
+<td class="py-3 px-4 border-b">
+<span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">مدير النظام</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4">طلبات الانضمام</h3>
+<div class="flex mb-4">
+<button class="application-filter px-4 py-2 bg-primary text-white !rounded-button whitespace-nowrap mr-2" data-filter="all">الكل</button>
+<button class="application-filter px-4 py-2 bg-white border border-gray-300 text-gray-700 !rounded-button whitespace-nowrap mr-2" data-filter="youtuber">يوتيوبر</button>
+<button class="application-filter px-4 py-2 bg-white border border-gray-300 text-gray-700 !rounded-button whitespace-nowrap" data-filter="streamer">ستريمر</button>
+</div>
+<div class="overflow-x-auto">
+<table class="min-w-full bg-white">
+<thead>
+<tr>
+<th class="py-3 px-4 border-b text-right">النوع</th>
+<th class="py-3 px-4 border-b text-right">معلومات الاتصال</th>
+<th class="py-3 px-4 border-b text-right">تاريخ التقديم</th>
+<th class="py-3 px-4 border-b text-right">الحالة</th>
+<th class="py-3 px-4 border-b text-right">الإجراءات</th>
+</tr>
+</thead>
+<tbody id="applicationsList">
+<!-- Applications will be loaded here -->
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Application Details Modal -->
+<div id="applicationDetailsModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+<div class="bg-white rounded-lg p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold">تفاصيل الطلب</h3>
+<button class="close-modal w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+<div id="applicationDetails" class="space-y-4">
+<!-- Application details will be loaded here -->
+</div>
+<div class="mt-8 flex space-x-4 space-x-reverse">
+<button class="application-action px-6 py-2 bg-green-500 text-white hover:bg-green-600 transition-colors duration-300 !rounded-button whitespace-nowrap" data-action="approve">قبول</button>
+<button class="application-action px-6 py-2 bg-red-500 text-white hover:bg-red-600 transition-colors duration-300 !rounded-button whitespace-nowrap" data-action="reject">رفض</button>
+<button class="close-modal px-6 py-2 bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300 !rounded-button whitespace-nowrap">إغلاق</button>
+</div>
+</div>
+</div>
+
+<!-- Team Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-4xl font-bold text-center mb-12">المؤسسين</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+
+  <!-- رام -->
+  <div class="team-card bg-white rounded-lg shadow-lg overflow-hidden">
+    <div class="h-48 bg-primary bg-opacity-10 flex items-center justify-center">
+      <img src="https://static.readdy.ai/image/5d9fc905c12a9e7939a491a90483198b/c3fc9d4f11195533971654b1fcd4b307.png" alt="رام" class="w-24 h-24 rounded-full object-cover">
+    </div>
+    <div class="p-6 text-center">
+      <h3 class="text-xl font-bold mb-2">رام</h3>
+      <p class="text-gray-600 mb-4">مؤسس ومدير الفريق</p>
+      <div class="flex justify-center space-x-3 space-x-reverse">
+        <a href="https://www.youtube.com/@ram4real" target="_blank" class="w-8 h-8 flex items-center justify-center text-primary hover:bg-primary hover:bg-opacity-10 rounded-full">
+          <i class="ri-youtube-line"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- كيوف -->
+  <div class="team-card bg-white rounded-lg shadow-lg overflow-hidden">
+    <div class="h-48 bg-primary bg-opacity-10 flex items-center justify-center">
+      <img src="https://cdn.discordapp.com/avatars/1317902928115404872/9335ce6ed026356ab7c9b7f595ab2736.png?size=4096" alt="كيوف" class="w-24 h-24 rounded-full object-cover">
+    </div>
+    <div class="p-6 text-center">
+      <h3 class="text-xl font-bold mb-2">كيوف</h3>
+      <p class="text-gray-600 mb-4">مسؤول المحتوى والتطوير</p>
+      <div class="flex justify-center space-x-3 space-x-reverse">
+        <a href="https://www.youtube.com/@kioov" target="_blank" class="w-8 h-8 flex items-center justify-center text-primary hover:bg-primary hover:bg-opacity-10 rounded-full">
+          <i class="ri-youtube-line"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ايزون -->
+  <div class="team-card bg-white rounded-lg shadow-lg overflow-hidden">
+    <div class="h-48 bg-primary bg-opacity-10 flex items-center justify-center">
+      <img src="https://cdn.discordapp.com/avatars/1112699468270288906/0577dc13a38f52a246391d73063b9314.png?size=4096" alt="ايزون" class="w-24 h-24 rounded-full object-cover">
+    </div>
+    <div class="p-6 text-center">
+      <h3 class="text-xl font-bold mb-2">ايزون</h3>
+      <p class="text-gray-600 mb-4">المنتج والمصمم</p>
+      <div class="flex justify-center space-x-3 space-x-reverse">
+        <a href="https://www.youtube.com/@AIz0n0" target="_blank" class="w-8 h-8 flex items-center justify-center text-primary hover:bg-primary hover:bg-opacity-10 rounded-full">
+          <i class="ri-youtube-line"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- سام -->
+  <div class="team-card bg-white rounded-lg shadow-lg overflow-hidden">
+    <div class="h-48 bg-primary bg-opacity-10 flex items-center justify-center">
+      <img src="https://cdn.discordapp.com/avatars/1224205713224503406/73c209b1d386349d2eb86b48247d7bf7.png?size=4096" alt="سام" class="w-24 h-24 rounded-full object-cover">
+    </div>
+    <div class="p-6 text-center">
+      <h3 class="text-xl font-bold mb-2">سام</h3>
+      <p class="text-gray-600 mb-4">مسؤول الشراكات والإعلانات</p>
+      <div class="flex justify-center space-x-3 space-x-reverse">
+        <a href="https://www.youtube.com/channel/UCuKhfSmoBt8If6xjbjT8gbA" target="_blank" class="w-8 h-8 flex items-center justify-center text-primary hover:bg-primary hover:bg-opacity-10 rounded-full">
+          <i class="ri-youtube-line"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ريدفوكس -->
+  <div class="team-card bg-white rounded-lg shadow-lg overflow-hidden">
+    <div class="h-48 bg-primary bg-opacity-10 flex items-center justify-center">
+      <img src="file:///C:/Users/ram%20allah/Downloads/channels45_profile.jpg" alt="ريدفوكس" class="w-24 h-24 rounded-full object-cover">
+    </div>
+    <div class="p-6 text-center">
+      <h3 class="text-xl font-bold mb-2">ريدفوكس</h3>
+      <p class="text-gray-600 mb-4">مسؤول سيرفر الديسكورد والقناة</p>
+      <div class="flex justify-center space-x-3 space-x-reverse">
+        <a href="https://www.youtube.com/channel/UCYToMQUqwjomzIcXFS3ULWg" target="_blank" class="w-8 h-8 flex items-center justify-center text-primary hover:bg-primary hover:bg-opacity-10 rounded-full">
+          <i class="ri-youtube-line"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div>
+<h3 class="text-2xl font-['Pacifico'] mb-4">wonders</h3>
+<p class="mb-4">انضم إلى فريقنا وكن جزءًا من مجتمع المبدعين في عالم المحتوى الرقمي.</p>
+<div class="flex space-x-4 space-x-reverse">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-20 rounded-full hover:bg-opacity-30 transition-colors duration-300">
+<i class="ri-youtube-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-20 rounded-full hover:bg-opacity-30 transition-colors duration-300">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-20 rounded-full hover:bg-opacity-30 transition-colors duration-300">
+<i class="ri-instagram-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-20 rounded-full hover:bg-opacity-30 transition-colors duration-300">
+<i class="ri-discord-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">روابط سريعة</h4>
+<ul class="space-y-2">
+<li><a href="#" class="hover:text-primary transition-colors duration-300">الرئيسية</a></li>
+<li><a href="#" class="hover:text-primary transition-colors duration-300">من نحن</a></li>
+<li><a href="#" class="hover:text-primary transition-colors duration-300">الفريق</a></li>
+<li><a href="#" class="hover:text-primary transition-colors duration-300">قدم طلبك</a></li>
+<li><a href="#" class="hover:text-primary transition-colors duration-300">تواصل معنا</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">المؤسسين</h4>
+<ul class="space-y-2">
+<li>رام - مؤسس ومدير الفريق</li>
+<li>كيوف - مسؤول المحتوى والتطوير</li>
+<li>ايزون - المنتج والمصمم</li>
+<li>سام - مسؤول الشراكات والإعلانات</li>
+<li>ريدفوكس - مسؤول سيرفر الديسكورد والقناة</li>
+</ul>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">تواصل معنا</h4>
+<ul class="space-y-2">
+<li class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center text-primary ml-2">
+<i class="ri-mail-line"></i>
+</div>
+<span>slashercutting@gmail.com</span>
+</li>
+<li class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center text-primary ml-2">
+<i class="ri-discord-line"></i>
+</div>
+<span>انضم إلى سيرفر الديسكورد <link rel="alternate" href="https://discord.gg/se8rw5u7nB" type="application/atom+xml" title="Atom"><link rel="discordapp" href="https://discord.gg/se8rw5u7nB"></span>
+</li>
+<li class="flex items-center">
+<div class="w-6 h-6 flex items-center justify-center text-primary ml-2">
+<i class="ri-youtube-line"></i>
+</div>
+<span>اشترك في قناتنا</span>
+</li>
+</ul>
+<div class="mt-4">
+<button id="adminLoginButton" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">تسجيل دخول المسؤول</button>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+<p>© 2025 جميع الحقوق محفوظة | تم التصميم بواسطة ووندرز</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const youtuberLabel = document.getElementById('youtuberLabel');
+const streamerLabel = document.getElementById('streamerLabel');
+const selectionConfirmation = document.getElementById('selectionConfirmation');
+function updateSelectionStyle(selectedLabel, otherLabel) {
+selectedLabel.classList.add('bg-primary', 'bg-opacity-10', 'border', 'border-primary');
+selectedLabel.querySelector('i').classList.remove('hidden');
+otherLabel.classList.remove('bg-primary', 'bg-opacity-10', 'border', 'border-primary');
+otherLabel.querySelector('i').classList.add('hidden');
+nextToStep2.classList.remove('bg-gray-300', 'text-gray-500', 'opacity-50', 'cursor-not-allowed');
+nextToStep2.classList.add('bg-primary', 'text-white');
+}
+document.getElementById('youtuberRadio').addEventListener('change', function() {
+if (this.checked) {
+updateSelectionStyle(youtuberLabel, streamerLabel);
+selectionConfirmation.textContent = 'تم اختيار يوتيوبر - يمكنك الانتقال للخطوة التالية';
+selectionConfirmation.classList.remove('hidden');
+}
+});
+document.getElementById('streamerRadio').addEventListener('change', function() {
+if (this.checked) {
+updateSelectionStyle(streamerLabel, youtuberLabel);
+selectionConfirmation.textContent = 'تم اختيار ستريمر - يمكنك الانتقال للخطوة التالية';
+selectionConfirmation.classList.remove('hidden');
+}
+});
+// Application data storage
+let applications = [];
+let partnerships = [];
+let admins = [
+{ name: 'رام (المدير)', email: 'ramlawerd42@gmail.com', password: 'admin123', isMainAdmin: true }
+];
+let currentApplicationId = null;
+let isAdmin = false;
+// DOM Elements
+const loginBtn = document.getElementById('loginBtn');
+const registerBtn = document.getElementById('registerBtn');
+const applyNowBtn = document.getElementById('applyNowBtn');
+const applicationSection = document.getElementById('applicationSection');
+const youtuberQuestions = document.getElementById('youtuberQuestions');
+const streamerQuestions = document.getElementById('streamerQuestions');
+const successMessage = document.getElementById('successMessage');
+const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+const loginModal = document.getElementById('loginModal');
+const registerModal = document.getElementById('registerModal');
+const adminLoginModal = document.getElementById('adminLoginModal');
+const adminDashboard = document.getElementById('adminDashboard');
+const adminLoginButton = document.getElementById('adminLoginButton');
+const applicationDetailsModal = document.getElementById('applicationDetailsModal');
+// Show/Hide Modals
+function showModal(modal) {
+modal.classList.remove('hidden');
+}
+function hideModal(modal) {
+modal.classList.add('hidden');
+}
+// Event Listeners
+loginBtn.addEventListener('click', () => showModal(loginModal));
+registerBtn.addEventListener('click', () => showModal(registerModal));
+document.getElementById('partnershipBtn').addEventListener('click', function() {
+applicationSection.classList.remove('hidden');
+applicationSection.scrollIntoView({ behavior: 'smooth' });
+document.getElementById('step1').classList.add('hidden');
+const form = document.getElementById('applicationForm');
+form.innerHTML = partnershipFormHTML;
+form.addEventListener('submit', handlePartnershipSubmit);
+});
+function handlePartnershipSubmit(e) {
+e.preventDefault();
+const formData = {
+id: Date.now(),
+type: 'partnership',
+companyName: e.target.companyName.value,
+partnershipGoals: e.target.partnershipGoals.value,
+needsAds: e.target.needsAds.value,
+contactEmail: e.target.contactEmail.value,
+contactPhone: e.target.contactPhone.value,
+date: new Date().toLocaleDateString('ar-SA'),
+status: 'pending'
+};
+partnerships.push(formData);
+e.target.reset();
+applicationSection.classList.add('hidden');
+showModal(successMessage);
+if (!adminDashboard.classList.contains('hidden')) {
+renderApplicationsList();
+}
+}
+adminLoginButton.addEventListener('click', () => showModal(adminLoginModal));
+document.querySelectorAll('.close-modal').forEach(button => {
+button.addEventListener('click', function() {
+const modal = this.closest('[id$="Modal"]');
+hideModal(modal);
+});
+});
+document.getElementById('showRegisterModal').addEventListener('click', function(e) {
+e.preventDefault();
+hideModal(loginModal);
+showModal(registerModal);
+});
+document.getElementById('showLoginModal').addEventListener('click', function(e) {
+e.preventDefault();
+hideModal(registerModal);
+showModal(loginModal);
+});
+// Apply Now Button
+applyNowBtn.addEventListener('click', function() {
+applicationSection.classList.remove('hidden');
+applicationSection.scrollIntoView({ behavior: 'smooth' });
+});
+// Form Navigation
+nextToStep2.addEventListener('click', function() {
+const contentType = document.querySelector('input[name="contentType"]:checked');
+if (!contentType) {
+alert('الرجاء اختيار نوع المحتوى الخاص بك');
+return;
+}
+document.getElementById('step1').classList.add('hidden');
+if (contentType.value === 'youtuber') {
+youtuberQuestions.classList.remove('hidden');
+} else {
+streamerQuestions.classList.remove('hidden');
+}
+});
+document.querySelectorAll('.back-btn').forEach(button => {
+button.addEventListener('click', function() {
+youtuberQuestions.classList.add('hidden');
+streamerQuestions.classList.add('hidden');
+document.getElementById('step1').classList.remove('hidden');
+});
+});
+// Thumbnail Preview
+const thumbnailInput = document.querySelector('input[name="thumbnails"]');
+const thumbnailPreview = document.getElementById('thumbnailPreview');
+thumbnailInput.addEventListener('change', function() {
+thumbnailPreview.innerHTML = '';
+if (this.files) {
+Array.from(this.files).forEach(file => {
+const reader = new FileReader();
+reader.onload = function(e) {
+const img = document.createElement('img');
+img.src = e.target.result;
+img.classList.add('w-full', 'h-24', 'object-cover', 'rounded');
+thumbnailPreview.appendChild(img);
+}
+reader.readAsDataURL(file);
+});
+}
+});
+// Form Submission
+document.getElementById('applicationForm').addEventListener('submit', function(e) {
+e.preventDefault();
+const contentType = document.querySelector('input[name="contentType"]:checked').value;
+let formData = {
+id: Date.now(),
+type: contentType,
+date: new Date().toLocaleDateString('ar-SA'),
+status: 'pending'
+};
+if (contentType === 'youtuber') {
+formData.youtubeLink = document.querySelector('input[name="youtubeLink"]').value;
+formData.editingLevel = document.querySelector('input[name="editingLevel"]:checked').value;
+formData.discord = document.querySelector('input[name="discordYoutuber"]').value;
+// Handle thumbnails (in a real app, you would upload these to a server)
+const thumbnails = document.querySelector('input[name="thumbnails"]').files;
+formData.thumbnailCount = thumbnails.length;
+} else {
+formData.streamSchedule = document.querySelector('input[name="streamSchedule"]').value;
+formData.pcSpec = document.querySelector('input[name="pcSpec"]:checked').value;
+formData.discord = document.querySelector('input[name="discordStreamer"]').value;
+}
+// Add to applications array
+applications.push(formData);
+// Reset form
+this.reset();
+youtuberQuestions.classList.add('hidden');
+streamerQuestions.classList.add('hidden');
+document.getElementById('step1').classList.remove('hidden');
+// Show success message
+applicationSection.classList.add('hidden');
+showModal(successMessage);
+// Update admin dashboard if open
+if (!adminDashboard.classList.contains('hidden')) {
+renderApplicationsList();
+}
+});
+closeSuccessBtn.addEventListener('click', function() {
+hideModal(successMessage);
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+// Admin Login
+document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+e.preventDefault();
+const email = document.querySelector('input[name="adminEmail"]').value;
+const password = document.querySelector('input[name="adminPassword"]').value;
+const admin = admins.find(a => a.email === email && a.password === password);
+if (admin) {
+isAdmin = true;
+hideModal(adminLoginModal);
+applicationSection.classList.add('hidden');
+adminDashboard.classList.remove('hidden');
+renderAdminsList();
+renderApplicationsList();
+} else {
+alert('بيانات الدخول غير صحيحة');
+}
+});
+// Admin Logout
+document.getElementById('adminLogout').addEventListener('click', function() {
+isAdmin = false;
+adminDashboard.classList.add('hidden');
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+// Add New Admin
+document.getElementById('addAdminForm').addEventListener('submit', function(e) {
+e.preventDefault();
+const name = document.querySelector('input[name="newAdminName"]').value;
+const email = document.querySelector('input[name="newAdminEmail"]').value;
+const password = document.querySelector('input[name="newAdminPassword"]').value;
+if (!name || !email || !password) {
+alert('الرجاء ملء جميع الحقول');
+return;
+}
+if (admins.some(a => a.email === email)) {
+alert('البريد الإلكتروني مستخدم بالفعل');
+return;
+}
+admins.push({
+name,
+email,
+password,
+isMainAdmin: false
+});
+this.reset();
+renderAdminsList();
+});
+// Filter Applications
+document.querySelectorAll('.application-filter').forEach(button => {
+button.addEventListener('click', function() {
+document.querySelectorAll('.application-filter').forEach(btn => {
+btn.classList.remove('bg-primary', 'text-white');
+btn.classList.add('bg-white', 'border', 'border-gray-300', 'text-gray-700');
+});
+this.classList.remove('bg-white', 'border', 'border-gray-300', 'text-gray-700');
+this.classList.add('bg-primary', 'text-white');
+renderApplicationsList(this.dataset.filter);
+});
+});
+// Render Admins List
+function renderAdminsList() {
+const adminsList = document.getElementById('adminsList');
+adminsList.innerHTML = '';
+admins.forEach(admin => {
+const row = document.createElement('tr');
+row.innerHTML = `
+<td class="py-3 px-4 border-b">${admin.name}</td>
+<td class="py-3 px-4 border-b">${admin.email}</td>
+<td class="py-3 px-4 border-b">
+${admin.isMainAdmin ?
+'<span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">مدير النظام</span>' :
+'<button class="remove-admin px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm hover:bg-red-200">حذف</button>'
+}
+</td>
+`;
+if (!admin.isMainAdmin) {
+row.querySelector('.remove-admin').addEventListener('click', function() {
+if (confirm('هل أنت متأكد من حذف هذا المسؤول؟')) {
+admins = admins.filter(a => a.email !== admin.email);
+renderAdminsList();
+}
+});
+}
+adminsList.appendChild(row);
+});
+}
+// Render Applications List
+function renderApplicationsList(filter = 'all') {
+const applicationsList = document.getElementById('applicationsList');
+applicationsList.innerHTML = '';
+let filteredApplications = [...applications, ...partnerships];
+if (filter !== 'all') {
+filteredApplications = applications.filter(app => app.type === filter);
+}
+if (filteredApplications.length === 0) {
+const row = document.createElement('tr');
+row.innerHTML = `
+<td colspan="5" class="py-4 px-4 text-center text-gray-500">لا توجد طلبات حالياً</td>
+`;
+applicationsList.appendChild(row);
+return;
+}
+filteredApplications.forEach(app => {
+const row = document.createElement('tr');
+let statusBadge = '';
+if (app.status === 'pending') {
+statusBadge = '<span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">قيد المراجعة</span>';
+} else if (app.status === 'approved') {
+statusBadge = '<span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">مقبول</span>';
+} else {
+statusBadge = '<span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">مرفوض</span>';
+}
+row.innerHTML = `
+<td class="py-3 px-4 border-b">${app.type === 'youtuber' ? 'يوتيوبر' : app.type === 'streamer' ? 'ستريمر' : 'شراكة'}</td>
+<td class="py-3 px-4 border-b">${app.discord}</td>
+<td class="py-3 px-4 border-b">${app.date}</td>
+<td class="py-3 px-4 border-b">${statusBadge}</td>
+<td class="py-3 px-4 border-b">
+<button class="view-application px-3 py-1 bg-primary text-white rounded !rounded-button whitespace-nowrap hover:bg-opacity-90">عرض التفاصيل</button>
+</td>
+`;
+row.querySelector('.view-application').addEventListener('click', function() {
+showApplicationDetails(app.id);
+});
+applicationsList.appendChild(row);
+});
+}
+// Partnership Form HTML
+const partnershipFormHTML = `
+<div id="partnershipQuestions" class="space-y-4">
+<div>
+<label class="block text-gray-700 font-medium mb-2">اسم الشركة</label>
+<input type="text" name="companyName" class="w-full px-4 py-2 rounded input-field focus:outline-none" required>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">ماذا تريد من الشراكة؟</label>
+<textarea name="partnershipGoals" class="w-full px-4 py-2 rounded input-field focus:outline-none h-32" required></textarea>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">هل تريد إعلانات؟</label>
+<div class="grid grid-cols-2 gap-3">
+<label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
+<input type="radio" name="needsAds" value="yes" class="custom-radio" required>
+<span class="mr-2">نعم</span>
+</label>
+<label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
+<input type="radio" name="needsAds" value="no" class="custom-radio" required>
+<span class="mr-2">لا</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 font-medium mb-2">معلومات التواصل</label>
+<input type="email" name="contactEmail" class="w-full px-4 py-2 rounded input-field focus:outline-none mb-2" placeholder="البريد الإلكتروني" required>
+<input type="tel" name="contactPhone" class="w-full px-4 py-2 rounded input-field focus:outline-none" placeholder="رقم الهاتف" required>
+</div>
+<div class="pt-4 flex justify-between">
+<button type="button" class="back-btn px-6 py-2 border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-300 !rounded-button whitespace-nowrap">رجوع</button>
+<button type="submit" class="px-6 py-2 bg-secondary text-white hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap">إرسال طلب الشراكة</button>
+</div>
+</div>
+`;
+// Show Application Details
+function showApplicationDetails(id) {
+const app = applications.find(a => a.id === id) || partnerships.find(p => p.id === id);
+if (!app) return;
+currentApplicationId = id;
+const detailsContainer = document.getElementById('applicationDetails');
+let details = '';
+
+if (app.type === 'partnership') {
+    details = `
+        <div><h4 class="font-semibold">النوع:</h4><p>طلب شراكة</p></div>
+        <div><h4 class="font-semibold">اسم الشركة:</h4><p>${app.companyName}</p></div>
+        <div><h4 class="font-semibold">أهداف الشراكة:</h4><p>${app.partnershipGoals}</p></div>
+        <div><h4 class="font-semibold">يحتاج إعلانات؟:</h4><p>${app.needsAds === 'yes' ? 'نعم' : 'لا'}</p></div>
+        <div><h4 class="font-semibold">البريد الإلكتروني للتواصل:</h4><p>${app.contactEmail}</p></div>
+        <div><h4 class="font-semibold">رقم الهاتف:</h4><p>${app.contactPhone}</p></div>
+    `;
+} else if (app.type === 'youtuber') {
+details = `
+<div>
+<h4 class="font-semibold">النوع:</h4>
+<p>يوتيوبر</p>
+</div>
+<div>
+<h4 class="font-semibold">رابط القناة:</h4>
+<p><a href="${app.youtubeLink}" target="_blank" class="text-primary hover:underline">${app.youtubeLink}</a></p>
+</div>
+<div>
+<h4 class="font-semibold">مستوى المونتاج:</h4>
+<p>${getEditingLevelText(app.editingLevel)}</p>
+</div>
+<div>
+<h4 class="font-semibold">عدد الصور المصغرة المرفقة:</h4>
+<p>${app.thumbnailCount} صورة</p>
+</div>
+<div>
+<h4 class="font-semibold">حساب الديسكورد:</h4>
+<p>${app.discord}</p>
+</div>
+`;
+} else {
+details = `
+<div>
+<h4 class="font-semibold">النوع:</h4>
+<p>ستريمر</p>
+</div>
+<div>
+<h4 class="font-semibold">جدول البث:</h4>
+<p>${app.streamSchedule}</p>
+</div>
+<div>
+<h4 class="font-semibold">مواصفات الجهاز:</h4>
+<p>${getPcSpecText(app.pcSpec)}</p>
+</div>
+<div>
+<h4 class="font-semibold">حساب الديسكورد:</h4>
+<p>${app.discord}</p>
+</div>
+`;
+}
+details += `
+<div>
+<h4 class="font-semibold">تاريخ التقديم:</h4>
+<p>${app.date}</p>
+</div>
+<div>
+<h4 class="font-semibold">الحالة:</h4>
+<p>${getStatusText(app.status)}</p>
+</div>
+`;
+detailsContainer.innerHTML = details;
+showModal(applicationDetailsModal);
+}
+// Application Actions
+document.querySelectorAll('.application-action').forEach(button => {
+button.addEventListener('click', function() {
+const action = this.dataset.action;
+const appIndex = applications.findIndex(a => a.id === currentApplicationId);
+if (appIndex !== -1) {
+applications[appIndex].status = action === 'approve' ? 'approved' : 'rejected';
+hideModal(applicationDetailsModal);
+renderApplicationsList();
+}
+});
+});
+// Helper Functions
+function getEditingLevelText(level) {
+switch(level) {
+case 'bad': return 'سيء';
+case 'medium': return 'متوسط';
+case 'good': return 'جيد';
+case 'excellent': return 'ممتاز';
+default: return '';
+}
+}
+function getPcSpecText(spec) {
+switch(spec) {
+case 'weak': return 'ضعيف';
+case 'medium': return 'متوسط';
+case 'strong': return 'قوي';
+default: return '';
+}
+}
+function getStatusText(status) {
+switch(status) {
+case 'pending': return 'قيد المراجعة';
+case 'approved': return 'مقبول';
+case 'rejected': return 'مرفوض';
+default: return '';
+}
+}
+// Sample Data (for demonstration)
+applications = JSON.parse(localStorage.getItem('applications')) || [];
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Login Form
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+e.preventDefault();
+alert('تم تسجيل الدخول بنجاح!');
+document.getElementById('loginModal').classList.add('hidden');
+});
+// Register Form
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+e.preventDefault();
+alert('تم إنشاء الحساب بنجاح!');
+document.getElementById('registerModal').classList.add('hidden');
+});
+});
+
+document.getElementById('exploreBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('exploreSection').classList.remove('hidden');
+  document.getElementById('exploreSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('exploreForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = this.name.value;
+  const discord = this.discord.value;
+  const idea = this.idea.value;
+  const entry = { id: Date.now(), name, discord, idea, date: new Date().toLocaleDateString('ar-SA'), status: 'pending' };
+  applications.push(entry);
+  this.reset();
+  alert('تم إرسال الفكرة بنجاح! سيتم مراجعتها مع الفريق.');
+  if (!adminDashboard.classList.contains('hidden')) {
+    renderApplicationsList();
+  }
+});
+
+
+document.getElementById('exploreBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('exploreSection').classList.remove('hidden');
+  document.getElementById('exploreSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('suggestionForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const suggestedName = this.suggestedName.value;
+  const yourName = this.yourName.value;
+  const reason = this.reason.value;
+  const entry = {
+    id: Date.now(),
+    type: 'suggestion',
+    suggestedName,
+    yourName,
+    reason,
+    date: new Date().toLocaleDateString('ar-SA'),
+    status: 'pending'
+  };
+  applications.push(entry);
+  this.reset();
+  alert('تم إرسال الاقتراح بنجاح! سيتم عرضه مع التقديمات.');
+  if (!adminDashboard.classList.contains('hidden')) {
+    renderApplicationsList();
+  }
+});
+
+</script>
+
+<!-- Best Members Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12">أفضل الأعضاء</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+      
+      <div class="team-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center p-4">
+        <div class="w-20 h-20 mx-auto bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-2xl font-bold text-primary">ل</div>
+        <h3 class="mt-4 font-semibold text-lg">ليزر</h3>
+      </div>
+    
+      <div class="team-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center p-4">
+        <div class="w-20 h-20 mx-auto bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-2xl font-bold text-primary">م</div>
+        <h3 class="mt-4 font-semibold text-lg">ميدو</h3>
+      </div>
+    
+      <div class="team-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center p-4">
+        <div class="w-20 h-20 mx-auto bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-2xl font-bold text-primary">ع</div>
+        <h3 class="mt-4 font-semibold text-lg">عبودي</h3>
+      </div>
+    
+      <div class="team-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center p-4">
+        <div class="w-20 h-20 mx-auto bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-2xl font-bold text-primary">ب</div>
+        <h3 class="mt-4 font-semibold text-lg">بايتز</h3>
+      </div>
+    
+      <div class="team-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center p-4">
+        <div class="w-20 h-20 mx-auto bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-2xl font-bold text-primary">د</div>
+        <h3 class="mt-4 font-semibold text-lg">دريفيكس</h3>
+      </div>
+    
+      <div class="team-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center p-4">
+        <div class="w-20 h-20 mx-auto bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-2xl font-bold text-primary">ل</div>
+        <h3 class="mt-4 font-semibold text-lg">لينيكس</h3>
+      </div>
+    
+      <div class="team-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center p-4">
+        <div class="w-20 h-20 mx-auto bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-2xl font-bold text-primary">د</div>
+        <h3 class="mt-4 font-semibold text-lg">دافنشي</h3>
+      </div>
+    
+      <div class="team-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center p-4">
+        <div class="w-20 h-20 mx-auto bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-2xl font-bold text-primary">س</div>
+        <h3 class="mt-4 font-semibold text-lg">سليم</h3>
+      </div>
+    
+      <div class="team-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center p-4">
+        <div class="w-20 h-20 mx-auto bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-2xl font-bold text-primary">و</div>
+        <h3 class="mt-4 font-semibold text-lg">وايت جيمر</h3>
+      </div>
+    
+      <div class="team-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center p-4">
+        <div class="w-20 h-20 mx-auto bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-2xl font-bold text-primary">ل</div>
+        <h3 class="mt-4 font-semibold text-lg">ليفي</h3>
+      </div>
+    
+      <div class="team-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center p-4">
+        <div class="w-20 h-20 mx-auto bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-2xl font-bold text-primary">ج</div>
+        <h3 class="mt-4 font-semibold text-lg">جينق بريد</h3>
+      </div>
+    
+      <div class="team-card bg-gray-50 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center p-4">
+        <div class="w-20 h-20 mx-auto bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-2xl font-bold text-primary">م</div>
+        <h3 class="mt-4 font-semibold text-lg">مهيب</h3>
+      </div>
+    
+    </div>
+  </div>
+</section>
+
+
+<!-- Explore Section -->
+<section id="exploreSection" OLD class="py-16 hidden bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12">استكشاف</h2>
+
+    <!-- Form for submitting ideas or joining -->
+    <div class="bg-white p-8 rounded-lg shadow-lg mb-12 max-w-2xl mx-auto">
+      <h3 class="text-2xl font-semibold mb-6 text-center">شاركنا أفكارك الملهمة</h3>
+      <form id="exploreForm" class="space-y-4">
+        <input type="text" name="name" placeholder="اسمك" class="w-full px-4 py-2 rounded input-field" required>
+                <textarea name="idea" placeholder="اكتب فكرتك هنا" class="w-full px-4 py-2 rounded input-field h-32" required></textarea>
+        <button type="submit" class="w-full py-2 bg-secondary text-white hover:bg-opacity-90 transition-colors duration-300 rounded-button">إرسال</button>
+      
+    </form>
+    <div class="bg-secondary bg-opacity-10 rounded-lg p-6 text-center text-gray-800 mb-8">
+      <h4 class="text-xl font-bold mb-2">لماذا فريق Wonders؟</h4>
+      <p>الانضمام إلينا يعني أنك ستكون ضمن بيئة إبداعية محفزة، تشمل:</p>
+      <ul class="list-disc text-right pr-6 mt-4 space-y-1">
+        <li>فرص ترويج قوية لمحتواك</li>
+        <li>دعم في الإنتاج والمونتاج والتصميم</li>
+        <li>علاقات وشراكات مع مشاهير ومؤسسات</li>
+        <li>مشاركة جمهور الفريق وتوسيع قاعدة المتابعين</li>
+        <li>فعاليات وتحديات حصرية وممتعة</li>
+      </ul>
+    </div>
+
+
+    <!-- Embedded latest YouTube videos -->
+    <div class="text-center">
+      <h3 class="text-2xl font-semibold mb-6">آخر الفيديوهات من القناة</h3>
+      <div class="aspect-w-16 aspect-h-9 max-w-4xl mx-auto">
+        <iframe class="w-full h-96 rounded-lg" src="https://www.youtube.com/embed?listType=user_uploads&list=wonders4real" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Explore Section -->
+<section id="exploreSection" class="py-16 hidden bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12">استكشف وكن جزءًا من النخبة</h2>
+
+    <!-- Form for submitting member ideas -->
+    <div class="bg-white p-8 rounded-lg shadow-lg mb-12 max-w-2xl mx-auto">
+      <h3 class="text-2xl font-semibold mb-6 text-center">رشّح مبدعين تعرفهم ليكونوا جزءًا من فريقنا</h3>
+    <p class="text-center text-gray-600 mb-4">
+    فريق <strong>Wonders</strong> يجمع نخبة من المؤثرين وصنّاع المحتوى المميزين، ويوفر بيئة دعم وتعاون وترويج قوية تساعدهم على الارتقاء بمحتواهم إلى مستويات أعلى.
+    </p>
+      <form id="suggestionForm" class="space-y-4">
+        <input type="text" name="suggestedName" placeholder="اسم الشخص المقترح" class="w-full px-4 py-2 rounded input-field" required>
+        <input type="text" name="yourName" placeholder="اسمك (صاحب الفكرة)" class="w-full px-4 py-2 rounded input-field" required>
+        <textarea name="reason" placeholder="سبب الاقتراح أو تعليق (اختياري)" class="w-full px-4 py-2 rounded input-field h-24"></textarea>
+        <button type="submit" class="w-full py-2 bg-secondary text-white hover:bg-opacity-90 transition-colors duration-300 rounded-button">إرسال الاقتراح</button>
+      
+    </form>
+    <div class="bg-secondary bg-opacity-10 rounded-lg p-6 text-center text-gray-800 mb-8">
+      <h4 class="text-xl font-bold mb-2">لماذا فريق Wonders؟</h4>
+      <p>الانضمام إلينا يعني أنك ستكون ضمن بيئة إبداعية محفزة، تشمل:</p>
+      <ul class="list-disc text-right pr-6 mt-4 space-y-1">
+        <li>فرص ترويج قوية لمحتواك</li>
+        <li>دعم في الإنتاج والمونتاج والتصميم</li>
+        <li>علاقات وشراكات مع مشاهير ومؤسسات</li>
+        <li>مشاركة جمهور الفريق وتوسيع قاعدة المتابعين</li>
+        <li>فعاليات وتحديات حصرية وممتعة</li>
+      </ul>
+    </div>
+
+
+    <!-- Embedded latest YouTube videos -->
+    <div class="text-center">
+      <h3 class="text-2xl font-semibold mb-6">آخر الفيديوهات من القناة</h3>
+      <div class="aspect-w-16 aspect-h-9 max-w-4xl mx-auto">
+        <iframe class="w-full h-96 rounded-lg" src="https://www.youtube.com/embed?listType=user_uploads&list=wonders4real" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
+<!-- زر تسجيل دخول المسؤول -->
+<div class="text-center mt-8">
+  <button onclick="document.getElementById('adminLoginModal').classList.remove('hidden')" 
+          class="px-6 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition">
+    دخول المسؤول
+  </button>
+</div>
+
+<!-- نافذة تسجيل دخول المسؤول -->
+<div id="adminLoginModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+  <div class="bg-white rounded-lg p-8 max-w-md w-full">
+    <h2 class="text-2xl font-bold mb-4 text-center">تسجيل دخول المسؤول</h2>
+    <input type="email" id="adminEmail" placeholder="البريد الإلكتروني" 
+           class="w-full px-4 py-2 mb-3 rounded border border-gray-300 focus:outline-none">
+    <input type="password" id="adminPassword" placeholder="كلمة المرور" 
+           class="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none">
+    <div class="flex justify-between">
+      <button onclick="checkAdminLogin()" 
+              class="px-6 py-2 bg-primary text-white rounded hover:bg-opacity-90">دخول</button>
+      <button onclick="document.getElementById('adminLoginModal').classList.add('hidden')" 
+              class="px-6 py-2 bg-gray-300 rounded hover:bg-gray-400">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+<!-- لوحة تحكم المسؤول -->
+<div id="adminDashboard" class="container mx-auto mt-12 hidden">
+  <h2 class="text-3xl font-bold mb-6 text-center">لوحة تحكم المسؤول</h2>
+  <p class="text-center text-gray-600 mb-6">مرحبًا بك أيها المسؤول! هنا يمكنك متابعة الطلبات.</p>
+  <div id="applicationsArea" class="text-center text-lg text-gray-700">لا توجد طلبات حاليًا.</div>
+</div>
