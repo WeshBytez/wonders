@@ -2,8 +2,7 @@
   "ram": {
     "display_name": "Ram",
     "display_picture": "pfp_ram",
-    "display_desc_en": "Team Founder",
-    "display_desc_ar": "مؤسس الفريق",
+    "display_desc": "Team Founder",
     "youtube": "UCPmX35XBv1GZX8qWehyC2OA",
     "instagram": "ram.edit42",
     "discord": "7sKvuAED3c",
@@ -12,8 +11,7 @@
   "redfoxjr": {
     "display_name": "RedFoxJr",
     "display_picture": "pfp_redfoxjr",
-    "display_desc_en": "Team CEO And Discord Manager",
-    "display_desc_ar": "المدير التنفيذي ومدير الديسكورد",
+    "display_desc": "Team CEO And Discord Manager",
     "youtube": "UCPmX35XBv1GZX8qWehyC2OA",
     "instagram": "redfoxjr_",
     "discord": "yVTetJMAKA",
@@ -22,8 +20,7 @@
   "kioov": {
     "display_name": "Kioov",
     "display_picture": "pfp_kioov",
-    "display_desc_en": "Content and Development Manager",
-    "display_desc_ar": "مسؤول المحتوى والتطوير",
+    "display_desc": "Content and Development Manager",
     "youtube": "UCPmX35XBv1GZX8qWehyC2OA",
     "instagram": "redfoxjr_",
     "discord": "yVTetJMAKA",
@@ -32,8 +29,7 @@
   "aizon": {
     "display_name": "Aizon",
     "display_picture": "pfp_aizon",
-    "display_desc_en": "Wonders Academy Manager",
-    "display_desc_ar": "مسؤول اكاديمية وندرز",
+    "display_desc": "Wonders Academy Manager",
     "youtube": "UCPmX35XBv1GZX8qWehyC2OA",
     "instagram": "redfoxjr_",
     "discord": "yVTetJMAKA",
@@ -42,8 +38,7 @@
   "reallava": {
     "display_name": "Reallava",
     "display_picture": "pfp_reallava",
-    "display_desc_en": "Partnerships Manager",
-    "display_desc_ar": "مسؤول الإعلانات",
+    "display_desc": "Partnerships Manager",
     "youtube": "UCPmX35XBv1GZX8qWehyC2OA",
     "instagram": "redfoxjr_",
     "discord": "yVTetJMAKA",
@@ -52,8 +47,7 @@
   "bytez": {
     "display_name": "Bytez",
     "display_picture": "pfp_weshbytez",
-    "display_desc_en": "Is Onto Aomething",
-    "display_desc_ar": "غير اللغة...",
+    "display_desc": "Is Onto Aomething",
     "youtube": "UCPmX35XBv1GZX8qWehyC2OA",
     "instagram": "bilel4reel",
     "discord": null,
