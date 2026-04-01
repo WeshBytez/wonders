@@ -1,12 +1,62 @@
 {
-  "ram": {
-    "display_name": "Ram",
-    "display_picture": "pfp_ram",
-    "display_desc": "Team Founder",
-    "youtube": "UCPmX35XBv1GZX8qWehyC2OA",
+  "xSpLeeF": {
+    "display_name": "xSpLeeF",
+    "display_picture": "pfp_xspleef",
+    "display_desc": "Youtuber",
+    "youtube": "UC7SySVcqlyFeWiRjeR8aSWg",
     "instagram": "ram.edit42",
     "discord": "7sKvuAED3c",
     "twitch": "redfoxjr_"
+  },
+
+  "Plazma": {
+    "display_name": "Plazma",
+    "display_picture": "pfp_plazma",
+    "display_desc": "Youtuber",
+    "youtube": "UC7FzdZ79VDKIqP-6_Occ5LA",
+    "instagram": null,
+    "discord": "7sKvuAED3c",
+    "twitch": null
+  },
+
+  "Algazal": {
+    "display_name": "Algazal",
+    "display_picture": "pfp_algazal",
+    "display_desc": "Youtuber",
+    "youtube": "UC6E8z7tAjmY3ccng543KVoA",
+    "instagram": null,
+    "discord": "QcXEJyS9j9",
+    "twitch": null
+  },
+
+  "Adriefy": {
+    "display_name": "Adriefy",
+    "display_picture": "pfp_adriefy",
+    "display_desc": "Youtuber",
+    "youtube": "UC2LOPdksH-MXy53QbG4JV6Q",
+    "instagram": null,
+    "discord": "QcXEJyS9j9",
+    "twitch": null
+  },
+
+  "Drifx": {
+    "display_name": "Drifx",
+    "display_picture": "pfp_drifx",
+    "display_desc": "Youtuber",
+    "youtube": "UCpR4hhtTCdJQV2ID9jWmbUg",
+    "instagram": null,
+    "discord": "nhaACWhnES",
+    "twitch": null
+  },
+
+  "iiLIZER": {
+    "display_name": "iiLIZER",
+    "display_picture": "pfp_iilizer",
+    "display_desc": "Youtuber",
+    "youtube": "UCPGa5-qbyzNXVCWtqOgAzhw",
+    "instagram": null,
+    "discord": "nhaACWhnES",
+    "twitch": null
   }
 }
   
