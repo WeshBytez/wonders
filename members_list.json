@@ -4,9 +4,9 @@
     "display_picture": "pfp_xspleef",
     "display_desc": "Youtuber",
     "youtube": "UC7SySVcqlyFeWiRjeR8aSWg",
-    "instagram": "ram.edit42",
-    "discord": "7sKvuAED3c",
-    "twitch": "redfoxjr_"
+    "instagram": "xspleef_",
+    "discord": "rpHFPws2PP",
+    "twitch": null
   },
 
   "Plazma": {
@@ -19,13 +19,23 @@
     "twitch": null
   },
 
+  "SarFlear": {
+    "display_name": "SarFlear",
+    "display_picture": "pfp_sarflear",
+    "display_desc": "Youtuber",
+    "youtube": "UC7SySVcqlyFeWiRjeR8aSWg",
+    "instagram": "xsarflear",
+    "discord": null,
+    "twitch": null
+  },
+
   "Algazal": {
     "display_name": "Algazal",
     "display_picture": "pfp_algazal",
     "display_desc": "Youtuber",
     "youtube": "UC6E8z7tAjmY3ccng543KVoA",
     "instagram": null,
-    "discord": "QcXEJyS9j9",
+    "discord": "qEanhRGhZp",
     "twitch": null
   },
 
@@ -34,8 +44,8 @@
     "display_picture": "pfp_adriefy",
     "display_desc": "Youtuber",
     "youtube": "UC2LOPdksH-MXy53QbG4JV6Q",
-    "instagram": null,
-    "discord": "QcXEJyS9j9",
+    "instagram": "adriefymc",
+    "discord": "dJveHcuuGj",
     "twitch": null
   },
 
@@ -44,8 +54,8 @@
     "display_picture": "pfp_drifx",
     "display_desc": "Youtuber",
     "youtube": "UCpR4hhtTCdJQV2ID9jWmbUg",
-    "instagram": null,
-    "discord": "nhaACWhnES",
+    "instagram": "q.zt5",
+    "discord": "3umRpXDgDd",
     "twitch": null
   },
 
@@ -54,7 +64,77 @@
     "display_picture": "pfp_iilizer",
     "display_desc": "Youtuber",
     "youtube": "UCPGa5-qbyzNXVCWtqOgAzhw",
-    "instagram": null,
+    "instagram": "lizer_editor",
+    "discord": null,
+    "twitch": null
+  },
+
+  "LIFYI": {
+    "display_name": "LIFYI",
+    "display_picture": "pfp_lifyi",
+    "display_desc": "Youtuber",
+    "youtube": "UCOXK9bpIbqpxgpErX4aWNgA",
+    "instagram": "lifyi0",
+    "discord": null,
+    "twitch": null
+  },
+
+  "Magma": {
+    "display_name": "Magma",
+    "display_picture": "pfp_Magma",
+    "display_desc": "Youtuber",
+    "youtube": "UCHO1RVQZYNfzmQue6agIx7w",
+    "instagram": "magma_yt1",
+    "discord": "teZucyEBJg",
+    "twitch": null
+  },
+
+  "Midou": {
+    "display_name": "Midou",
+    "display_picture": "pfp_iimidou",
+    "display_desc": "Youtuber",
+    "youtube": "UCYOONVh6yh5OvP5gby34Bew",
+    "instagram": "imidou__",
+    "discord": "pHHss64Hm",
+    "twitch": null
+  },
+
+  "Reflex": {
+    "display_name": "Reflex",
+    "display_picture": "pfp_Reflex",
+    "display_desc": "Youtuber",
+    "youtube": "UCND88rpH_pFp8pQD2M7rKZQ",
+    "instagram": "reflex_1k_",
+    "discord": "wHB8RSDYZd",
+    "twitch": null
+  },
+
+  "Sky": {
+    "display_name": "Sky",
+    "display_picture": "pfp_sky",
+    "display_desc": "Youtuber",
+    "youtube": "UCGPVx0XlauHLWXBu4iSOG7A",
+    "instagram": "as1sky",
+    "discord": "HYsn6ufCGy",
+    "twitch": null
+  },
+
+  "Saleem": {
+    "display_name": "Saleem",
+    "display_picture": "pfp_saleem",
+    "display_desc": "Youtuber",
+    "youtube": "UCbPRlQ6_Re_12Bl2hsDNGZQ",
+    "instagram": "iisaleem_12",
+    "discord": "nhaACWhnES",
+    "twitch": null
+  },
+
+  "Ziko": {
+    "display_name": "Ziko",
+    "display_picture": "pfp_ziko",
+    "display_desc": "Youtuber",
+    "youtube": "UCvdPhz01RaoVY8QJ-nR2tXg",
+    "instagram": "ziko3mk_",
     "discord": "nhaACWhnES",
     "twitch": null
   }
